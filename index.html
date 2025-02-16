@@ -24,9 +24,30 @@
       
       <a-entity 
         gps-entity-place="latitude: 5.420417; longitude: 100.338741;"
+        look-at="[gps-camera]"
         gltf-model="Muzium_Penang.glb"
         scale="10 10 10"
       ></a-entity>
+
+      <a-text 
+        id="location-text"
+        value="Loading location..."
+        position="0 2 -2"
+        align="center"
+        color="black"
+      ></a-text>
+      
+      <script>
+        if (navigator.geolocation) {
+          navigator.geolocation.watchPosition((position) => {
+            const lat = position.coords.latitude.toFixed(6);
+            const lon = position.coords.longitude.toFixed(6);
+            document.getElementById("location-text").setAttribute("value", `Lat: ${lat}, Lon: ${lon}`);
+          });
+        } else {
+          document.getElementById("location-text").setAttribute("value", "Geolocation not supported");
+        }
+      </script>
 
       <a-camera gps-camera rotation-reader> </a-camera>
     </a-scene>
