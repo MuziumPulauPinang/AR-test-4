@@ -14,12 +14,20 @@
       vr-mode-ui="enabled: false"
       arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
     >
-      <a-text
+      <!-- Commented out text -->
+      <!-- <a-text
         value="This content will always face you."
         look-at="[gps-camera]"
         scale="120 120 120"
         gps-entity-place="latitude: 06.275780; longitude: 100.413612;"
-      ></a-text>
+      ></a-text> -->
+      
+      <a-entity 
+        gps-entity-place="latitude: 06.275780; longitude: 100.413612;"
+        gltf-model="Muzium_Penang.glb"
+        scale="10 10 10"
+      ></a-entity>
+
       <a-camera gps-camera rotation-reader> </a-camera>
     </a-scene>
   </body>
