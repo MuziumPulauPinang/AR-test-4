@@ -32,7 +32,8 @@
     <a-scene
       embedded
       vr-mode-ui="enabled: false"
-      arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
+      arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false; minAccuracy: 100;"
+
     >
       <!-- Commented out text -->
       <!-- <a-text
@@ -53,7 +54,8 @@
         id="custom-cube"
         gps-entity-place="latitude: 06.275821; longitude: 100.413632;"
         position="0 0 0"
-        scale="2 2 2"
+        look-at="[gps-camera]"
+        scale="5 5 5"
         color="red"
       ></a-box>
       
